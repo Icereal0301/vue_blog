@@ -1,15 +1,15 @@
 <template>
-  <div class="container1">
+  <div class="container">
     <div id="wrap">
       <navbar> </navbar>
       <br>
       <div class="outer">
         <div class="container">
-          <div class="row">
-            <blog v-if="$route.path === '/'" transition="slide"></blog>
-            <about v-if="$route.path === '/about'" transition="slide"></about>
-            <sidebar> </sidebar>
-          </div>
+
+
+            <component :is="currentView" transition="fade"> </component>
+
+
         </div>
       </div>
     </div>
@@ -19,15 +19,20 @@
 import Navbar from './components/Navbar'
 import Blog from './components/Blog'
 import About from './components/About'
-import Sidebar from './components/Sidebar'
 export default {
   components: {
     Navbar,
-    Blog,
-    About,
-    Sidebar
+    'blog': Blog,
+    'about': About
+  },
+  data () {
+    return {
+      currentView: 'blog'
+    }
   }
+
 }
+
 </script>
 <style>
   *{
@@ -56,4 +61,12 @@ export default {
   .slide-leave {
     transform: translate3d(-100%, 0, 0);
   }
+  .fade-transition {
+    transition: opacity 0.3s ease;
+  }
+  .fade-enter,
+  .fade-leave {
+    opacity: 0;
+  }
+
 </style>

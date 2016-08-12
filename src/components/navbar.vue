@@ -16,8 +16,8 @@
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"> </a>
           <a class="main-nav-link" v-link="'/'"><img id="ico" alt="Brand" src="../assets/bonfire.png"></a>
-          <a class="main-nav-link" v-link="'/'">Bonfire</a>
-          <a class="main-nav-link" v-link="'/about'">About me</a>
+          <a class="main-nav-link" v-link="'/'" @click="goto('blog')">Bonfire</a>
+          <a class="main-nav-link" v-link="'/about'" @click="goto('about')">About me</a>
           <a class="main-nav-link" href="http://github.com/SunskyXH">Github</a>
         </nav>
         <nav id="sub-nav">
@@ -56,6 +56,9 @@
       },
       showExpand: function () {
         this.show = !this.show
+      },
+      goto: function (path) {
+        this.$parent.currentView = path
       }
     }
 

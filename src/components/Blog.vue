@@ -1,15 +1,17 @@
 <template>
-  <div class=" col-sm-9 blog-main">
+  <div class="row">
+    <div class="col-sm-9 col-lg-9">
+  <div class="blog-main">
   <div class="blog-post" v-for="blog in blogs">
         <h2 class="blog-post-title">{{blog.title}}</h2>
-        <p class="blog-post-meta">
-          <span class="glyphicon glyphicon-calendar"> </span> {{blog.date}}
-          &nbsp;&nbsp;&nbsp;
-          <span class="glyphicon glyphicon-bookmark"> </span> <a href="#"> {{blog.cat1}} </a> ► <a href="#"> {{blog.cat2}}</a> </p>
-          {{{blog.content}}}
+        <p class="blog-post-meta"><span class="glyphicon glyphicon-calendar"> </span> {{blog.date}}&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-bookmark"> </span> <a href="#"> {{blog.cat1}} </a> ► <a href="#"> {{blog.cat2}}</a> </p>{{{blog.content}}}
         <hr>
-        <p> <span class="glyphicon glyphicon-tags"></span> &nbsp;<span v-for="tag of blog.tags"><span class="label label-warning">{{tag}}</span> </span> <a style="float: right;" ><span class="glyphicon glyphicon-option-vertical"> </span> </a> <p>
+        <p> <span class="glyphicon glyphicon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="label label-warning">{{tag}}</span> </span> <a style="float: right;" ><span class="glyphicon glyphicon-option-vertical"> </span> </a> <p>
   </div>
+  </div>
+      </div>
+
+  <sidebar> </sidebar>
     </div>
 </template>
 <style>
@@ -108,6 +110,7 @@
     padding: 15px;
     background-color: #f5f5f5;
     border-radius: 4px;
+
   }
   .blog-post-title {
     margin-bottom: 5px;
@@ -158,6 +161,7 @@
 
 </style>
 <script>
+  import Sidebar from './Sidebar'
   export default {
     ready () {
       this.$http.get('http://localhost:8888/get_articles')
@@ -175,6 +179,9 @@
       return {
         blogs: blogs
       }
+    },
+    components: {
+      Sidebar
     }
   }
 </script>

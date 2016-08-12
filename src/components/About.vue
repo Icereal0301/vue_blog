@@ -1,6 +1,7 @@
 <template>
-  <div class=" col-sm-9">
-          <div class="article-entry blog-post">
+  <div class="row">
+    <div class="col-sm-9 col-lg-9">
+          <div  class="article-entry blog-post">
             <div style="text-align: center; width: 100%">
               <div style="width: 120px;height: 70px;border-radius: 60px;overflow: hidden;margin-left:auto;margin-right:auto">
                 <img src="../assets/photo.jpg">
@@ -31,7 +32,9 @@
             <hr>
             <a href="#" >举报</a>
           </div>
-</div>
+      </div>
+        <sidebar></sidebar>
+          </div>
 </template>
 <style>
   .blog-post {
@@ -47,4 +50,10 @@
   }
 </style>
 <script>
+  import Sidebar from './Sidebar'
+  export default {
+    components: {
+      Sidebar
+    }
+  }
 </script>
