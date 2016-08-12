@@ -45,12 +45,15 @@ export default {
     text-decoration: none;
   }
 
-  .expand2-transition {
-    transition: all .5s ease;
+  .slide-transition {
+    transition: transform .5s ease;
   }
 
-  .expand2-enter, .expand2-leave {
-    padding: 0 0;
-    opacity: 0;
+  .slide-enter {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .slide-leave {
+    transform: translate3d(-100%, 0, 0);
   }
 </style>

@@ -8,7 +8,7 @@
           <span class="glyphicon glyphicon-bookmark"> </span> <a href="#"> {{blog.cat1}} </a> ► <a href="#"> {{blog.cat2}}</a> </p>
           {{{blog.content}}}
         <hr>
-        <p> <span class="glyphicon glyphicon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="label label-success">{{tag}}</span> </span> <a style="float: right;" ><span class="glyphicon glyphicon-option-vertical"> </span> </a> <p>
+        <p> <span class="glyphicon glyphicon-tags"></span> &nbsp;<span v-for="tag of blog.tags"><span class="label label-warning">{{tag}}</span> </span> <a style="float: right;" ><span class="glyphicon glyphicon-option-vertical"> </span> </a> <p>
   </div>
     </div>
 </template>

@@ -1,7 +1,6 @@
 <template>
   <div class=" col-sm-9">
           <div class="article-entry blog-post">
-            <h1>关于我</h1>
             <div style="text-align: center; width: 100%">
               <div style="width: 120px;height: 70px;border-radius: 60px;overflow: hidden;margin-left:auto;margin-right:auto">
                 <img src="../assets/photo.jpg">
